@@ -23,7 +23,6 @@ class MainController extends Controller
         $viewData = array();
         $viewData["page_title"]="Find your immigration path";
         $viewData["imm_options"] = ["Student who wants to keep studying",
-        "Student who wants to start working",
         "Worker who wants to keep working",
         "Visitor"];
         $viewData["path1"]="SP E";
