@@ -27,6 +27,8 @@ Route::get('/about', 'App\Http\Controllers\Maincontroller@showAboutPage')->name(
 
 
 Route::get('/immigration-path-personal-details', 'App\Http\Controllers\MainController@showImmigrationPathForm')->name("immigration.path");
-Route::get('/immigration-path-wp-extension', 'App\Http\Controllers\MainController@showWPEForm')->name("immigration.wpe");
+Route::get('/immigration-path-wp-extension', 'App\Http\Controllers\ApplicantController@showWPQuestions')->name("immigration.wpe");
+Route::get('/immigration-path-sp-extension', 'App\Http\Controllers\ApplicantController@showSPQuestions')->name("immigration.spe");
 
-Route::get('/personal-info', 'App\Http\Controllers\ApplicantController@showPersonalQuestions')->name("immigration.questions");
+Route::get('/immigration-path-sp-extension/create', 'App\Http\Controllers\ApplicantController@showSPQuestions')->name("immigration.spe.create");
+Route::post('/immigration-path-wp-extension/create', 'App\Http\Controllers\ApplicantController@showWPQuestions')->name("immigration.wpe.create");

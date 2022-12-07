@@ -10,14 +10,25 @@
     <label for="question1">Are you a...</label>
     <select class="form-control" id="question1">
       @foreach($viewData["imm_options"] as $immOption)
-      <option value={{ $immOption }}>{{ $immOption }}</option>
+      <option value="{{ $immOption }}">{{ $immOption }}</option>
       @endforeach
-    </select>
- 
-    <input class="form-control" type="text" placeholder="Your immigration path is..." readonly>
-  </div>
+     <!-- ?php
+   if(isset($_POST['question1'])=="Student who wants to keep studying") {
+    echo '<a href="{{ route("immigration.wpe") }}">Go to study permit questions</a>';
+   }else if(isset($_POST['question1'])=="Worker who wants to keep worker") {
+    echo '<a href="{{ route("immigration.spe") }}">Go to work permit questions</a>';
+   }else{
+    echo 'What are you doing here?';
+   }
 
-    <a href="{{ route('immigration.questions') }}">Go to questions</a>
+  ?>  -->
+    </select>
+
+
+    
+  </div>
+  
+    
   
 
 </form>
