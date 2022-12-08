@@ -33,6 +33,11 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function() {
 Route::get('home', 'App\Http\Controllers\Maincontroller@showHomePage')->name("main.home");
 Route::get('/about', 'App\Http\Controllers\Maincontroller@showAboutPage')->name("main.about");
 
+Route::post('/user/create', 'App\Http\Controllers\UserController@createUser')->name('user.create');
+Route::post('/user/{id}/edit', 'App\Http\Controllers\UserController@edit')->name('user.edit');
+Route::post('/user/{id}/update', 'App\Http\Controllers\UserController@updateUser')->name('user.update');
+Route::get('/user/{id}/delete','App\Http\Controllers\UserController@deleteUser')->name('user.delete');
+
 Route::get('/forms/imm5707', 'App\Http\Controllers\FormController@showIMM5707Form')->name('form.imm5707');
 Route::get('/forms/imm5709', 'App\Http\Controllers\FormController@showIMM5709Form')->name('form.imm5709');
 Route::get('/forms/imm5710', 'App\Http\Controllers\FormController@showIMM5710Form')->name('form.imm5710');
