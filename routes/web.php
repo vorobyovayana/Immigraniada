@@ -19,6 +19,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+
 Route::get('logout', [LoginController::class,'logout']);
 
 Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function() {
@@ -34,9 +35,14 @@ Route::get('home', 'App\Http\Controllers\Maincontroller@showHomePage')->name("ma
 Route::get('/about', 'App\Http\Controllers\Maincontroller@showAboutPage')->name("main.about");
 
 Route::post('/user/create', 'App\Http\Controllers\UserController@createUser')->name('user.create');
-Route::post('/user/{id}/edit', 'App\Http\Controllers\UserController@edit')->name('user.edit');
+Route::get('/user/{id}/edit', 'App\Http\Controllers\UserController@edit')->name('user.edit');
 Route::post('/user/{id}/update', 'App\Http\Controllers\UserController@updateUser')->name('user.update');
 Route::get('/user/{id}/delete','App\Http\Controllers\UserController@deleteUser')->name('user.delete');
+
+// Route::post('/procedure/create', 'App\Http\Controllers\ImmigrationProcedureController@createProcedure')->name('procedure.create');
+// Route::get('/procedure/{id}/edit', 'App\Http\Controllers\ImmigrationProcedureController@edit')->name('procedure.edit');
+// Route::post('/procedure/{id}/update', 'App\Http\Controllers\ImmigrationProcedureController@updateProcedure')->name('procedure.update');
+// Route::get('/procedure/{id}/delete','App\Http\Controllers\ImmigrationProcedureController@deleteProcedure')->name('procedure.delete');
 
 Route::get('/forms/imm5707', 'App\Http\Controllers\FormController@showIMM5707Form')->name('form.imm5707');
 Route::get('/forms/imm5709', 'App\Http\Controllers\FormController@showIMM5709Form')->name('form.imm5709');
@@ -50,7 +56,3 @@ Route::get('/immigration-path-sp-extension', 'App\Http\Controllers\ApplicantCont
 Route::post('/immigration-path-sp-extension/create', 'App\Http\Controllers\ApplicantController@createSPApplicant')->name("immigration.spe.create");
 Route::post('/immigration-path-wp-extension/create', 'App\Http\Controllers\ApplicantController@createWPApplicant')->name("immigration.wpe.create");
 Route::get('/immigration-info-success', 'App\Http\Controllers\ApplicantController@showSuccessPage')->name("immigration.success");
-
-
-
-Route::get('logout', [LoginController::class,'logout']);

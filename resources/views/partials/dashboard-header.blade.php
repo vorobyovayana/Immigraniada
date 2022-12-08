@@ -25,9 +25,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('admin.forms') }}">Manage Immigration Forms</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Mailchimp</a>
-                </li>
             </ul>
             <ul class="navbar-nav">
                 <li><a href=" {{ route('logout') }}" class="nav-link">Logout</a></li>

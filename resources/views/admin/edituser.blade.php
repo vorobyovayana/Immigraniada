@@ -22,7 +22,7 @@
         </tr>
         <tr>
             <td>Role (0 = User; 1 = Admin)</td>
-            <td><input type="text" name="number" value="{{ $viewData['user']->role }}"></td>
+            <td><input type="text" name="role" value="{{ $viewData['user']->role }}"></td>
         </tr>
 
         <tr>

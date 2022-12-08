@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Admin\DashboardController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
@@ -28,7 +29,7 @@ class UserController extends Controller
     {
         $newUser = new User();
 
-        $newUser->name = $formData->input('user_name');
+        $newUser->name = $formData->input('name');
         $newUser->email = $formData->input('email');
         $newUser->password = $formData->input('password');
         $newUser->immigrationPath = $formData->input('immigrationPath');
@@ -64,8 +65,9 @@ class UserController extends Controller
         $userToUpdt->role = $formData->input('role');
 
         $userToUpdt->save();
-
-        return back();
+        
+        $viewData['users'] = UserController::listUsers();
+        return view('admin.users')->with('viewData', $viewData);
     }
 
     public function deleteUser($id) {
