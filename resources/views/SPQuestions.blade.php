@@ -1,232 +1,196 @@
 @include('partials.header')
 @include('partials.footer')
-@section('page_title',$viewData["page_title"] )
-
 <div class="container h-100">
   <div class="row h-100 justify-content-center align-items-center">
     <div class="col-10 col-md-8 col-lg-6">
       <form method="POST" action="{{ route('immigration.spe.create')}}">
       @csrf
-        <div class="form-group">
-          <label for="fName">First Name</label>
-          <input type="text" class="form-control" id="fName">
+      <label for="fName">First Name</label>
+          <input type="text" class="form-control" name="fName">
         </div>
         <div class="form-group">
           <label for="lName">Last Name</label>
-          <input type="text" class="form-control" id="lName">
+          <input type="text"  class="form-control" name="lName">
         </div>
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="previousNames">
-          <label class="form-check-label" for="previuosNames">Have you had any previous names</label>
-        </div>
+
         <div class="form-group">
           <label for="pfName">Previous First Name</label>
-          <input type="text" class="form-control" id="pfName">
+          <input type="text" value="None" class="form-control" name="pfName">
         </div>
         <div class="form-group">
           <label for="plName">Previous Last Name</label>
-          <input type="text" class="form-control" id="plName">
+          <input type="text" value="None" class="form-control" name="plName">
         </div>
         <div class="form-group">
           <label for="gender">Select gender</label>
-          <select class="form-control" id="gender">
-            <option>Female</option>
+          <select class="form-control" name="gender">
+            <option selected>Female</option>
             <option>Male</option>
             <option>Other</option>
           </select>
         </div>
         <div>
           <label for="DOB">Date of birth:</label>
-          <input type="date" id="DOB" name="birDOBthday">
+          <input type="date" value=08/17/2001 name="DOB" name="DOB">
         </div>
         <div class="form-group">
           <label for="birthCountry">Country of Birth</label>
-          <input type="text" class="form-control" id="birthCountry">
+          <input type="text" value="Russia" class="form-control" name="birthCountry">
         </div>
         <div class="form-group">
           <label for="birthCity">City of Birth</label>
-          <input type="text" class="form-control" id="birthCity">
+          <input type="text" value="Saint Petersburg" class="form-control" name="birthCity">
         </div>
         <div class="form-group">
           <label for="citizenship">Citizenship</label>
-          <input type="text" class="form-control" id="citizenship">
+          <input type="text" value="Russia" class="form-control" name="citizenship">
         </div>
         <div class="form-group">
-          <label for="residenceCountry">Country of residence</label>
-          <input type="text" class="form-control" id="residenceCountry">
+          <label for="residenceCountry">Country of resnameence</label>
+          <input type="text" value="Canada" class="form-control" name="residenceCountry">
         </div>
         <div class="form-group">
           <label for="statusCanada">Status in Canada</label>
-          <input type="text" class="form-control" id="residenceCountry">
+          <input type="text" value="Study Permit" class="form-control" name="statusCanada">
+        </div>
+        <div class="form-group">
+          <label for="residenceStatusPeriod">How long have you had your current status in Canada</label>
+          <input type="text" value="default" class="form-control" name="residenceStatusPeriod">
         </div>
 
         <div class="form-group">
           <label for="email">Email address</label>
-          <input type="email" class="form-control" id="email">
+          <input type="email" value="default@default.com" class="form-control" name="email">
         </div>
         <div class="form-group">
           <label for="phone">Phone number</label>
-          <input type="text" class="form-control" id="phone">
+          <input type="text" value="default" class="form-control" name="phone">
         </div>
         <div class="form-group">
           <label for="residentialAddress">Residential Address</label>
-          <input type="text" class="form-control" id="residentialAddress">
-        </div>
-        <div class="form-group">
-          <label for="mailingAddress">Mailing Address</label>
-          <input type="text" class="form-control" id="mailingAddress">
+          <input type="text" value="default" class="form-control" name="residentialAddress">
         </div>
 
         <div class="form-group">
           <label for="mart">Mailing Address</label>
-          <input type="text" class="form-control" id="mailingAddress">
+          <input type="text" value="default" class="form-control" name="mailingAddress">
         </div>
 
-        <select class="form-control" id="maritalStatus">
+        <select class="form-control" name="maritalStatus">
           <option>Single</option>
-          <option>Married</option>
+          <option selected>Married</option>
           <option>Divorced</option>
         </select>
 
         <div class="form-group">
           <label for="mariageDate">Mariage Date</label>
-          <input type="date" class="form-control" id="mariageDate">
+          <input type="date" value=09/29/2022 class="form-control" name="mariageDate">
         </div>
 
         <div class="form-group">
           <label for="sfName">Spouse First Name</label>
-          <input type="text" class="form-control" id="sfName">
+          <input type="text" value="default" class="form-control" name="sfName">
         </div>
 
         <div class="form-group">
           <label for="slName">Spouse Last Name</label>
-          <input type="text" class="form-control" id="slName">
+          <input type="text" value="default" class="form-control" name="slName">
         </div>
 
         <div class="form-group">
           <label for="englishLevel">English level</label>
-          <input type="text" class="form-control" id="englishLevel">
+          <input type="text" value="default" class="form-control" name="englishLevel">
+        </div>
+        <div class="form-group">
+          <label for="nativeLanguage">Native language</label>
+          <input type="text" value="default" class="form-control" name="nativeLanguage">
         </div>
 
 
         <div class="form-group">
           <label for="passportNumber">Passport Number</label>
-          <input type="text" class="form-control" id="passportNumber">
+          <input type="text" value="default" class="form-control" name="passportNumber">
         </div>
 
         <div class="form-group">
-          <label for="passportIssue">Passport Issue Date</label>
-          <input type="date" class="form-control" id="passportNumber">
+          <label for="passportIssueDate">Passport Issue Date</label>
+          <input type="date"  class="form-control" name="passportIssueDate">
         </div>
 
         <div class="form-group">
-          <label for="passportExpiry">Passport Expiry Date</label>
-          <input type="date" class="form-control" id="passportNumber">
+          <label for="passportExpiryDate">Passport Expiry Date</label>
+          <input type="date"  class="form-control" name="passportExpiryDate">
         </div>
 
         <div class="form-group">
           <label for="passportCountry">Passport Country of Issue</label>
-          <input type="text" class="form-control" id="passportCountry">
+          <input type="text" value="default" class="form-control" name="passportCountry">
         </div>
 
-        <div class="form-group">
-          <label for="residentialAddress">Residential Address</label>
-          <input type="text" class="form-control" id="residentialAddress">
-        </div>
-        <div class="form-group">
-          <label for="mailingAddress">Mailing Address</label>
-          <input type="text" class="form-control" id="mailingAddress">
-        </div>
 
-        <div class="container h-100">
-        <div class="row h-100 justify-content-center align-items-center">
-          <div class="col-10 col-md-8 col-lg-6">
-          <p>Have you passed a IELTS or TOEFL?</p>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="englishExamYes">
-        <label class="form-check-label" for="englishExamYes">
-          Yes
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="englishExamNo" checked>
-        <label class="form-check-label" for="englishExamNo">
-          No
-        </label>
-      </div>
-
-
+        <p>Have you passed a IELTS or TOEFL?</p>
+        <input type="text" value="Yes" class="form-control" name="englishExam">
         <div class="form-group">
           <label for="OriginalComingToCanadaDate">Original Coming To Canada Date</label>
-          <input type="date" class="form-control" id="OriginalComingToCanadaDate">
+          <input type="date"  value="default" class="form-control" name="OriginalComingToCanadaDate">
         </div>
         <div class="form-group">
           <label for="OriginalComingToCanadaPurpose">Original Coming To Canada Purpose</label>
-          <input type="text" class="form-control" id="OriginalComingToCanadaPurpose">
+          <input type="text"  value="default" class="form-control" name="OriginalComingToCanadaPurpose">
         </div>
         <div class="form-group">
           <label for="MostRecentComingToCanadaDate">Most Recent Coming To Canada Date</label>
-          <input type="date" class="form-control" id="MostRecentComingToCanadaDate">
+          <input type="date"  value="default" class="form-control" name="MostRecentComingToCanadaDate">
         </div>
         <div class="form-group">
           <label for="MostRecentComingToCanadaPurpose">Most Recent Coming To Canada Purpose</label>
-          <input type="text" class="form-control" id="MostRecentComingToCanadaPurpose">
+          <input type="text"  value="default" class="form-control" name="MostRecentComingToCanadaPurpose">
         </div>
         <div class="form-group">
           <label for="PreviousPermitNumber">Previous Permit Number</label>
-          <input type="text" class="form-control" id="PreviousPermitNumber">
+          <input type="text"   value="default" class="form-control" name="PreviousPermitNumber">
         </div>
 
-        <div class="form-group">
+        <!-- <div class="form-group">
           <label for="IntendedStudy">Intended Study</label>
-          <input type="text" class="form-control" id="IntendedStudy">
-        </div>
+          <input type="text" value="CSIS" class="form-control" name="IntendedStudy">
+        </div> -->
         <div class="form-group">
           <label for="Institution">Institution</label>
-          <input type="text" class="form-control" id="Institution">
+          <input type="text" value="Douglas College" class="form-control" name="Institution">
         </div>
         <div class="form-group">
           <label for="InstitutionAddress">Institution Address</label>
-          <input type="text" class="form-control" id="InstitutionAddress">
+          <input type="text" value="700 Royal Ave" class="form-control" name="InstitutionAddress">
         </div>
         <div class="form-group">
           <label for="StudentId">Student Id</label>
-          <input type="text" class="form-control" id="StudentId">
+          <input type="text" value="12345567" class="form-control" name="StudentId">
         </div>
         <div class="form-group">
           <label for="EducationDuration">Education Duration</label>
-          <input type="text" class="form-control" id="EducationDuration">
+          <input type="text"value="2 years"class="form-control" name="EducationDuration">
         </div>
         <div class="form-group">
           <label for="EducationCost">Education Cost</label>
-          <input type="text" class="form-control" id="EducationCost">
+          <input type="text" value="25 000 CAD" class="form-control" name="EducationCost">
         </div>
         <div class="form-group">
           <label for="Sponsor">Sponsor</label>
-          <input type="text" class="form-control" id="Sponsor">
+          <input type="text" value="Parents" class="form-control" name="Sponsor">
         </div>
         <div class="form-group">
           <label for="AvailableFunds">AvailableFunds</label>
-          <input type="text" class="form-control" id="AvailableFunds">
+          <input type="text"  value="25 000 CAD" class="form-control" name="AvailableFunds">
         </div>
-          <p>Work Permit Required?</p>
+        <!-- <p>Work Permit Required?</p>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="wpRequired">
-        <label class="form-check-label" for="wpRequired">
-          Yes
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="wpNotRequired" checked>
-        <label class="form-check-label" for="wpNotRequired">
-          No
-        </label>
-      </div>
+        <input class="form-check-input" type="checkbox" value=true name="wpRequired">Yes</input>
+        <input class="form-check-input" type="checkbox" value=false name="wpRequired" checked>No</input>
+      </div> -->
 
-    </div>
+      <input type="submit" value="Create Application">
 
-    <button type="submit" class="btn btn-primary">
-    Submit</button>
     </form>
   </div>
 </div>

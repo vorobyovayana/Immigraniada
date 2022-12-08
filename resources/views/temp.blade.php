@@ -1,9 +1,4 @@
-@include('partials.header')
-@include('partials.footer')
-
-<form method="POST" action="{{ route('immigration.wpe.create')}}">
-    @csrf
-    <label for="fName">First Name</label>
+<label for="fName">First Name</label>
           <input type="text" class="form-control" name="fName">
         </div>
         <div class="form-group">
@@ -44,16 +39,16 @@
           <input type="text" value="Russia" class="form-control" name="citizenship">
         </div>
         <div class="form-group">
-          <label for="residenceCountry">Country of resnameence</label>
-          <input type="text" value="Canada" class="form-control" name="residenceCountry">
+          <label for="resnameenceCountry">Country of resnameence</label>
+          <input type="text" value="Canada" class="form-control" name="resnameenceCountry">
         </div>
         <div class="form-group">
           <label for="statusCanada">Status in Canada</label>
-          <input type="text" value="Study Permit" class="form-control" name="statusCanada">
+          <input type="text" value="Study Permit" class="form-control" name="resnameenceCountry">
         </div>
         <div class="form-group">
-          <label for="residenceStatusPeriod">How long have you had your current status in Canada</label>
-          <input type="text" value="default" class="form-control" name="residenceStatusPeriod">
+          <label for="resnameenceStatusPeriod">How long have you had your current status in Canada</label>
+          <input type="text" value="default" class="form-control" name="resnameenceStatusPeriod">
         </div>
 
         <div class="form-group">
@@ -65,8 +60,8 @@
           <input type="text" value="default" class="form-control" name="phone">
         </div>
         <div class="form-group">
-          <label for="residentialAddress">Residential Address</label>
-          <input type="text" value="default" class="form-control" name="residentialAddress">
+          <label for="resnameentialAddress">Resnameential Address</label>
+          <input type="text" value="default" class="form-control" name="resnameentialAddress">
         </div>
 
         <div class="form-group">
@@ -126,8 +121,21 @@
         </div>
 
 
-        <p>Have you passed a IELTS or TOEFL?</p>
-        <input type="text" value="Yes" class="form-control" name="englishExam">
+        <div class="container h-100">
+        <div class="row h-100 justify-content-center align-items-center">
+          <div class="col-10 col-md-8 col-lg-6">
+          <p>Have you passed a IELTS or TOEFL?</p>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" name="englishExamYes">
+        <label class="form-check-label" for="englishExamYes">
+          Yes
+        </label>
+        <input class="form-check-input" type="checkbox" value="" name="englishExamNo" checked>
+        <label class="form-check-label" for="englishExamNo">
+          No
+        </label>
+      </div>
+    
         <div class="form-group">
           <label for="OriginalComingToCanadaDate">Original Coming To Canada Date</label>
           <input type="date"  value="default" class="form-control" name="OriginalComingToCanadaDate">
@@ -174,7 +182,3 @@
           <label for="PreviousEmployment">Previous Employment</label>
           <input type="text" value="default" class="form-control" name="PreviousEmployment">
         </div>
-        <input type="submit" value="Create Application">
-
-
-</form>

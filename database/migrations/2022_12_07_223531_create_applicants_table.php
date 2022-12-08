@@ -58,7 +58,7 @@ return new class extends Migration
             $table->string('PreviousEmployment')->default('none');
 
             // for study permit
-            $table->string('IntendedStudy')->default('none');
+           // $table->string('IntendedStudy')->default('none');
             $table->string('Institution')->default('none');
             $table->string('InstitutionAddress')->default('none');
             $table->string('StudentId')->default('none');
@@ -67,7 +67,7 @@ return new class extends Migration
             $table->string('EducationCost')->default('none');
             $table->string('Sponsor')->default('none');
             $table->string('AvailableFunds')->default('none');
-            $table->boolean('WorkPermitRequired')->default(false);
+            //$table->boolean('WorkPermitRequired')->default(false);
             $table->timestamps();
         });
     }
