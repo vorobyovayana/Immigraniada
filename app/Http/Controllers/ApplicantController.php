@@ -35,7 +35,6 @@ class ApplicantController extends Controller
         $na->immigrationPath = "WP";
 
         $na->fName = $postData->input('fName');
-        $na->fName = 'Iana';
         $na->lName = $postData->input('lName');
         $na->pfName = $postData->input('pfName');
         $na->plName = $postData->input('plName');

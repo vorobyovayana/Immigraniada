@@ -9,7 +9,7 @@
         </div>
         <div class="form-group">
           <label for="lName">Last Name</label>
-          <input type="text"  class="form-control"  value="{{ $viewData['applicant']->lName}} name="lName">
+          <input type="text"  class="form-control"  value="{{ $viewData['applicant']->lName}}" name="lName">
         </div>
 
         <div class="form-group">

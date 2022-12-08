@@ -49,11 +49,16 @@ Route::post('/immigration-path-wp-extension/create', 'App\Http\Controllers\Appli
 Route::get('/applicant-edit/{id}', 'App\Http\Controllers\ApplicantController@editApplicant')->name("applicant.edit");
 Route::post('/applicant-update/{id}', 'App\Http\Controllers\ApplicantController@updateApplicant')->name("applicant.update");
 Route::get('/applicant-delete/{id}', 'App\Http\Controllers\ApplicantController@deleteApplicant')->name("applicant.delete");
+Route::get('/applicant-list', 'App\Http\Controllers\ApplicantController@showApplicants')->name("applicant.list");
 
 Route::get('/immigration-info-success', 'App\Http\Controllers\ApplicantController@showSuccessPage')->name("immigration.success");
 
-Route::get('/applicant-list', 'App\Http\Controllers\ApplicantController@showApplicants')->name("applicant.list");
-
+Route::get('/spouse-edit/{id}', 'App\Http\Controllers\SpouseController@editSpouse')->name("spouse.edit");
+Route::post('/spouse-update/{id}', 'App\Http\Controllers\SpouseController@updateSpouse')->name("spouse.update");
+Route::get('/spouse-delete/{id}', 'App\Http\Controllers\SpouseController@deleteSpouse')->name("spouse.delete");
+Route::get('/spouse-list', 'App\Http\Controllers\SpouseController@showSpouses')->name("spouse.list");
+Route::post('/spouse-create', 'App\Http\Controllers\SpouseController@createSpouse')->name("spouse.create");
+Route::get('/spouse-add', 'App\Http\Controllers\SpouseController@addSpouse')->name("spouse.add");
 
 
 Route::get('logout', [LoginController::class,'logout']);
