@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -13,7 +14,9 @@ class DashboardController extends Controller
     }
 
     public function manageUsers(){
-        return view('admin.users');
+        $viewData = array();
+        $viewData['users'] = UserController::listUsers();
+        return view('admin.users')->with('viewData', $viewData);
     }
 
     public function manageProcedures(){
