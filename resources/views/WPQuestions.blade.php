@@ -44,7 +44,7 @@
           <input type="text" value="Russia" class="form-control" name="citizenship">
         </div>
         <div class="form-group">
-          <label for="residenceCountry">Country of resnameence</label>
+          <label for="residenceCountry">Country of residence</label>
           <input type="text" value="Canada" class="form-control" name="residenceCountry">
         </div>
         <div class="form-group">

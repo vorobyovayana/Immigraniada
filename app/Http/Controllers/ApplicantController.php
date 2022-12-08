@@ -146,4 +146,51 @@ class ApplicantController extends Controller
         return redirect()->route('immigration.success');
     }
 
+    public function editApplicant($id){
+
+        $applicant = Applicant::findorFail($id);
+
+        //Initialize View data
+        $viewData = array();
+        $viewData['title'] = 'Edit '.$applicant->fName.' '.$applicant->lName;
+        $viewData['applicant'] = $applicant;
+
+        return view('applicantEdit')
+            ->with('viewData',$viewData);
+    }
+
+
+    public function updateApplicant(Request $postData, $id)    {
+
+        $na = Applicant::findorFail($id);
+   
+        $na->fName = $postData->input('fName');
+        $na->lName = $postData->input('lName');
+        $na->email = $postData->input('email');
+        $na->phone = $postData->input('phone');
+        $na->lName = $postData->input('residentialAddress');
+    
+
+        $na->save();
+        return redirect()->route('applicant.list');
+
+    }
+
+    public function deleteApplicant($id)    {
+
+        Applicant::destroy($id);
+        return back();
+
+    }
+
+    public function showApplicants(){
+        $viewData = array();
+        $viewData['applicants'] = Applicant::all();
+    
+        return view('applicantList')
+            ->with("viewData",$viewData);
+    }
+
+
+
 }

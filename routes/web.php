@@ -39,12 +39,20 @@ Route::get('/forms/imm5710', 'App\Http\Controllers\FormController@showIMM5710For
 Route::get('/forms/imm5257', 'App\Http\Controllers\FormController@showIMM5257Form')->name('form.imm5257');
 
 Route::get('/immigration-path-personal-details', 'App\Http\Controllers\MainController@showImmigrationPathForm')->name("immigration.path");
+
 Route::get('/immigration-path-wp-extension', 'App\Http\Controllers\ApplicantController@showWPQuestions')->name("immigration.wpe");
 Route::get('/immigration-path-sp-extension', 'App\Http\Controllers\ApplicantController@showSPQuestions')->name("immigration.spe");
 
 Route::post('/immigration-path-sp-extension/create', 'App\Http\Controllers\ApplicantController@createSPApplicant')->name("immigration.spe.create");
 Route::post('/immigration-path-wp-extension/create', 'App\Http\Controllers\ApplicantController@createWPApplicant')->name("immigration.wpe.create");
+
+Route::get('/applicant-edit/{id}', 'App\Http\Controllers\ApplicantController@editApplicant')->name("applicant.edit");
+Route::post('/applicant-update/{id}', 'App\Http\Controllers\ApplicantController@updateApplicant')->name("applicant.update");
+Route::get('/applicant-delete/{id}', 'App\Http\Controllers\ApplicantController@deleteApplicant')->name("applicant.delete");
+
 Route::get('/immigration-info-success', 'App\Http\Controllers\ApplicantController@showSuccessPage')->name("immigration.success");
+
+Route::get('/applicant-list', 'App\Http\Controllers\ApplicantController@showApplicants')->name("applicant.list");
 
 
 
