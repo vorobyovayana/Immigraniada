@@ -30,6 +30,9 @@ class ApplicantController extends Controller
 
         //var_dump($postData);
 
+        $viewData = array();
+        $viewData['page_title'] = "Create WP Application";
+
         $na = new Applicant();
 
         $na->immigrationPath = "WP";
@@ -78,7 +81,9 @@ class ApplicantController extends Controller
         $na->PreviousEmployment= $postData->input('PreviousEmployment');
 
         $na->save();
-        return redirect()->route('immigration.success');
+        $viewData['applicant']= $na;
+        return view('forms.imm5710')
+        ->with('viewData',$viewData);
    
 
     }
@@ -86,6 +91,8 @@ class ApplicantController extends Controller
     function createSPApplicant(Request $postData)  {
 
         //var_dump($postData);
+        $viewData = array();
+        $viewData['page_title'] = "Create WP Application";
 
         $na = new Applicant();
 
@@ -141,8 +148,11 @@ class ApplicantController extends Controller
         
         $na->save();
         //return back();
+        $viewData['applicant'] = $na;
 
-        return redirect()->route('immigration.success');
+       // return redirect()->route('spouse.add');
+       return view('forms.imm5710')
+        ->with('viewData',$viewData);
     }
 
     public function editApplicant($id){

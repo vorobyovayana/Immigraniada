@@ -2,22 +2,22 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-//use Illuminate\Support\Facades\Request;
-
 use App\Models\Spouse;
+;
+
+
 
 class SpouseController extends Controller
 {
     public function addSpouse(){
         $viewData = array();
-
-
         return view("spouseAdd")->with("viewData", $viewData);
     }
    
     public function createSpouse(Request $postData){
 
         //var_dump($postData);
+        $viewData = array();
         $ns = new Spouse();
         $ns->fName = $postData->input('fName');
         $ns->lName = $postData->input('lName');
@@ -27,7 +27,9 @@ class SpouseController extends Controller
         $ns->occupation = $postData('occupation');
         $ns->willAccompany = $postData('willAccompany');
         $ns->save();
-        return back();
+        $viewData['spouse']= $ns;
+        return view('form.imm5710')
+        ->with('viewData', $viewData);
 
     }
 

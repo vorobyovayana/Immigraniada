@@ -26,8 +26,8 @@
     <table class="tg">
         <thead>
             <tr>
-                <th class="tg-0lax" colspan="3"><span style="font-weight:bold">1 Full name</span><br><span style="font-weight:normal">* Family name (as shown on your passport or travel document)</span><br><br></th>
-                <th class="tg-0lax" colspan="2"><br>Given name(s) (as shown on your passport or travel document)</th>
+                <th class="tg-0lax" colspan="3"><span style="font-weight:bold">1 Full name    </span><br><span style="font-weight:normal">* Family name (as shown on your passport or travel document)  {{ $viewData['applicant']['lName'] }}</span><br><br></th>
+                <th class="tg-0lax" colspan="2"><br>Given name(s) (as shown on your passport or travel document)  {{ $viewData['applicant']['fName'] }} </th>
             </tr>
         </thead>
         <tbody>
@@ -35,34 +35,35 @@
                 <td class="tg-0lax" colspan="5"><span style="font-weight:bold">2 a) Have you ever used any other name (e.g. Nickname, maiden name, alias, etc.) ?</span> </span><img src="https://static.thenounproject.com/png/60253-200.png" alt="Image" width="35" height="35">No&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://static.thenounproject.com/png/60253-200.png" alt="Image" width="35" height="35">Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br><span style="font-weight:bold"> b) If you answered "yes" to question 2a), </span><span style="font-weight:normal">please provide the name (e.g. Nickname, maiden name, alias, etc.)</span></td>
             </tr>
             <tr>
-                <td class="tg-0lax" colspan="3">&nbsp;&nbsp;&nbsp;Family Name</td>
-                <td class="tg-0lax" colspan="2">Given name(s)</td>
+                <td class="tg-0lax" colspan="3">&nbsp;&nbsp;&nbsp;Family Name {{ $viewData['applicant']['plName']}}</td>
+                <td class="tg-0lax" colspan="2">Given name(s)  {{ $viewData['applicant']['pfName']}}</td>
             </tr>
             <tr>
-                <td class="tg-0lax"><span style="font-weight:bold">3 Sex</span><br><br></td>
-                <td class="tg-0lax"><span style="font-weight:bold">4 Date of Birth</span><br><br></td>
-                <td class="tg-0lax" colspan="2"><span style="font-weight:bold">5. Place of birth</span><br><span style="font-weight:normal">* City/Town</span><br></td>
-                <td class="tg-0lax">* Country or Territory<br><br></td>
+                <td class="tg-0lax"><span style="font-weight:bold">3 Sex  </span><br><br> {{ $viewData['applicant']['gender']}}</td>
+                <td class="tg-0lax"><span style="font-weight:bold">4 Date of Birth  </span><br><br> {{ $viewData['applicant']['dob']}}</td>
+                <td class="tg-0lax" colspan="2"><span style="font-weight:bold">5. Place of birth</span><br><span style="font-weight:normal">* City/Town  {{ $viewData['applicant']['cityOfBirth']}}</span><br></td>
+                <td class="tg-0lax">* Country or Territory  {{ $viewData['applicant']['countryOfBirth']}}<br><br></td>
             </tr>
             <tr>
-                <td class="tg-0lax" colspan="5"><span style="font-weight:bold">6 * Citizenship</span></td>
+                <td class="tg-0lax" colspan="5"><span style="font-weight:bold">6 * Citizenship  </span> {{ $viewData['applicant']['citizenshipCountry']}}</td>
             </tr>
             <tr>
-                <td class="tg-0lax" colspan="5"><span style="font-weight:bold">7 Current country or territory of residence</span></td>
+                <td class="tg-0lax" colspan="5"><span style="font-weight:bold">7 Current country or territory of residence </span></td>
             </tr>
             <tr>
-                <td class="tg-0lax">Country or Territory</td>
-                <td class="tg-0lax">Status</td>
-                <td class="tg-0lax">Other</td>
-                <td class="tg-0lax">From</td>
+                <td class="tg-0lax">Country or Territory  {{ $viewData['applicant']['residenceCountry']}}</td>
+                <td class="tg-0lax">Status </td>
+                <td class="tg-0lax">Other </td>
+                <td class="tg-0lax">From  </td>
                 <td class="tg-0lax">To</td>
             </tr>
+ 
             <tr>
-                <td class="tg-0lax">* Canada</td>
-                <td class="tg-0lax">* </td>
+                <td class="tg-0lax">* Canada</td> 
+                <td class="tg-0lax"> {{ $viewData['applicant']['residenceStatus']}} </td>
                 <td class="tg-0lax"></td>
-                <td class="tg-0lax">YYYY-MM-DD</td>
-                <td class="tg-0lax">YYYY-MM-DD</td>
+                <td class="tg-0lax">2020-12-08 </td>
+                <td class="tg-0lax">2022-12-31</td>
             </tr>
             <tr>
                 <td class="tg-0lax" colspan="5"><span style="font-weight:bold">8 a) Previous countries or territories of residence: </span><span style="font-weight:normal">During the past five years have you lived in any country or territory other than your country</span><br><span style="font-weight:normal">of citizenship or your current country or territory of residence (indicated above) for more than six months?</span> </span><img src="https://static.thenounproject.com/png/60253-200.png" alt="Image" width="35" height="35">No&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://static.thenounproject.com/png/60253-200.png" alt="Image" width="35" height="35">Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><span style="font-weight:normal">&nbsp;&nbsp;&nbsp;</span><span style="font-weight:bold">b) If you answered "yes" to question 8a), </span><span style="font-weight:normal">please provide details</span></td>
@@ -89,9 +90,9 @@
                 <td class="tg-0lax">YYYY-MM-DD</td>
             </tr>
             <tr>
-                <td class="tg-1wig">9 * a) Your current marital status<br><br></td>
+                <td class="tg-1wig">9 * a) Your current marital status  {{ $viewData['applicant']['maritalStatus']}}<br><br></td>
                 <td class="tg-0lax" colspan="3"><span style="font-weight:bold">b) (If you are married or in a common-law relationship) </span><span style="font-weight:normal">Provide the date</span><br><span style="font-weight:normal">on which you were married or entered into the common-law relationship</span></td>
-                <td class="tg-0lax">Date<br><br>YYYY-MM-DD</td>
+                <td class="tg-0lax">Date<br><br>YYYY-MM-DD  {{ $viewData['applicant']['mariageDate']}}</td>
             </tr>
             <tr>
                 <td class="tg-0lax" colspan="3"> <span style="font-weight:bold">c)</span><span style="font-weight:normal"> Provide the name of your current Spouse/Common-law partner</span><br><span style="font-weight:normal"> Family name</span><br><br></td>
@@ -127,12 +128,12 @@
     <table class="tg">
         <tbody>
             <tr>
-                <td class="tg-1wig">1 * a) Native language/Mother Tongue<br><br></td>
-                <td class="tg-0lax" colspan="3"><span style="font-weight:normal">b) Are you able to communicate in English and/or French? </span></td>
-                <td class="tg-0lax" colspan="3"><span style="font-weight:normal">c) In which language are you most at ease?</span></td>
+                <td class="tg-1wig">1 * a) Native language/Mother Tongue<br><br> {{ $viewData['applicant']['nativeLanguage']}}</td>
+                <td class="tg-0lax" colspan="3"><span style="font-weight:normal">b) Are you able to communicate in English and/or French?  </span>Yes</td>
+                <td class="tg-0lax" colspan="3"><span style="font-weight:normal">c) In which language are you most at ease? </span> {{ $viewData['applicant']['nativeLanguage']}}</td>
             </tr>
             <tr>
-                <td class="tg-0lax" colspan="5"><span style="font-weight:normal">d) Have you taken a test from a designated testing agency to assess your proficiency in English or French? </span><img src="https://static.thenounproject.com/png/60253-200.png" alt="Image" width="35" height="35">No&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://static.thenounproject.com/png/60253-200.png" alt="Image" width="35" height="35">Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td class="tg-0lax" colspan="5"><span style="font-weight:normal">d) Have you taken a test from a designated testing agency to assess your proficiency in English or French?   </span> <img src="https://static.thenounproject.com/png/60253-200.png" alt="Image" width="35" height="35">{ $viewData['applicant']['languageExam']}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://static.thenounproject.com/png/60253-200.png" alt="Image" width="35" height="35">Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
             </tr>
         </tbody>
     </table>
@@ -140,10 +141,10 @@
     <table class="tg">
         <tbody>
             <tr>
-                <td class="tg-0lax"><span style="font-weight:normal">1 * Passport number</span></td>
-                <td class="tg-0lax"><span style="font-weight:normal">2 * Country or territory of issue</span></td>
-                <td class="tg-0lax" colspan="2"><span style="font-weight:normal">3 * Issue date <br><br> YYYY-MM-DD</td>
-                <td class="tg-0lax">4 * Expiry date<br><br>YYYY MM DD</td>
+                <td class="tg-0lax"><span style="font-weight:normal">1 * Passport number         </span><br> {{ $viewData['applicant']['passportNumber']}}</td>
+                <td class="tg-0lax"><span style="font-weight:normal">2 * Country or territory of issue </span> <br> {{ $viewData['applicant']['passportCountryofIssue']}}</td>
+                <td class="tg-0lax" colspan="2"><span style="font-weight:normal">3 * Issue date <br><br> YYYY-MM-DD   {{ $viewData['applicant']['passportIssueDate']}}</td>
+                <td class="tg-0lax">4 * Expiry date<br><br>YYYY MM DD  {{ $viewData['applicant']['passportExpiryDate']}}</td>
             </tr>
             <tr>
                 <td class="tg-0lax" colspan="5"><span style="font-weight:normal">5 * For this trip, will you use a passport issued by the Ministry of Foreign Affairs in Taiwan that includes your personal identification number? </span><img src="https://static.thenounproject.com/png/60253-200.png" alt="Image" width="35" height="35">No&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://static.thenounproject.com/png/60253-200.png" alt="Image" width="35" height="35">Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
@@ -160,10 +161,10 @@
                 <td class="tg-0lax" colspan="5"><span style="font-weight:normal">1 * Do you have a national identity document? </span><img src="https://static.thenounproject.com/png/60253-200.png" alt="Image" width="35" height="35">No&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://static.thenounproject.com/png/60253-200.png" alt="Image" width="35" height="35">Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
             </tr>
             <tr>
-                <td class="tg-0lax"><span style="font-weight:normal">2 * Document number</span></td>
-                <td class="tg-0lax"><span style="font-weight:normal">3 * Country or territory of issue</span></td>
-                <td class="tg-0lax" colspan="2"><span style="font-weight:normal">4 * Issue date <br><br> YYYY-MM-DD</td>
-                <td class="tg-0lax">5 * Expiry date<br><br>YYYY MM DD</td>
+                <td class="tg-0lax"><span style="font-weight:normal">2 * Document number </span> {{ $viewData['applicant']['passportNumber']}}</td>
+                <td class="tg-0lax"><span style="font-weight:normal">3 * Country or territory of issue</span> {{ $viewData['applicant']['passportCountryofIssue']}}</td>
+                <td class="tg-0lax" colspan="2"><span style="font-weight:normal">4 * Issue date <br><br> YYYY-MM-DD   {{ $viewData['applicant']['passportIssueDate']}}</td>
+                <td class="tg-0lax">5 * Expiry date<br><br>YYYY MM DD   {{ $viewData['applicant']['passportExpiryDate']}}</td>
             </tr>
         </tbody>
     </table>
@@ -194,17 +195,17 @@
                 <td class="tg-0lax">P.O box</td>
                 <td class="tg-0lax">Apt/Unit</td>
                 <td class="tg-0lax">Street no.</td>
-                <td class="tg-0lax" colspan="2">* Street name</td>
+                <td class="tg-0lax" colspan="2">* Street name  {{ $viewData['applicant']['residentialAddress']}}</td>
             </tr>
             <tr>
-                <td class="tg-0lax">* City/Town</td>
+                <td class="tg-0lax">* City/Town</td><br>Surrey</td>
                 <td class="tg-0lax">* Country or Territory<br>Canada</td>
                 <td class="tg-0lax">* Province</td>
                 <td class="tg-0lax">* Postal code</td>
                 <td class="tg-0lax"></td>
             </tr>
             <tr>
-                <td class="tg-1wig" colspan="5">2 Residential address <span style="font-weight:normal">Same as mailing address?</span></span><img src="https://static.thenounproject.com/png/60253-200.png" alt="Image" width="35" height="35">No&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://static.thenounproject.com/png/60253-200.png" alt="Image" width="35" height="35">Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td class="tg-1wig" colspan="5">2 Residential address <span style="font-weight:normal">Same as mailing address?     Yes</span></span><img src="https://static.thenounproject.com/png/60253-200.png" alt="Image" width="35" height="35">No&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://static.thenounproject.com/png/60253-200.png" alt="Image" width="35" height="35">Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
             </tr>
             <tr>
                 <td class="tg-0lax">Apt/Unit<br><br></td>
@@ -219,12 +220,12 @@
                 <td class="tg-0lax"></td>
             </tr>
             <tr>
-                <td class="tg-0lax" colspan="3"><span style="font-weight:bold">3 Telephone no.</span></span><img src="https://static.thenounproject.com/png/60253-200.png" alt="Image" width="35" height="35">Canada/US&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://static.thenounproject.com/png/60253-200.png" alt="Image" width="35" height="35">Other&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br><span style="font-weight:normal">Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Country Code&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ext.</span><br><br></td>
+                <td class="tg-0lax" colspan="3"><span style="font-weight:bold">3 Telephone no.  {{ $viewData['applicant']['phone']}}</span></span><img src="https://static.thenounproject.com/png/60253-200.png" alt="Image" width="35" height="35">Canada/US&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://static.thenounproject.com/png/60253-200.png" alt="Image" width="35" height="35">Other&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br><span style="font-weight:normal">Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Country Code&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ext.</span><br><br></td>
                 <td class="tg-0lax" colspan="2"><span style="font-weight:bold">4. Alternate Telephone no</span><img src="https://static.thenounproject.com/png/60253-200.png" alt="Image" width="35" height="35">Canada/US&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://static.thenounproject.com/png/60253-200.png" alt="Image" width="35" height="35">Other&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br><span style="font-weight:normal">Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Country Code&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ext.</span><br><br></td>
             </tr>
             <tr>
                 <td class="tg-0lax" colspan="3"><span style="font-weight:bold">5 Fax no.</span><img src="https://static.thenounproject.com/png/60253-200.png" alt="Image" width="35" height="35">Canada/US&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://static.thenounproject.com/png/60253-200.png" alt="Image" width="35" height="35">Other&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br><span style="font-weight:normal">Country Code&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ext.</span><br><br></td>
-                <td class="tg-0lax" colspan="2"><span style="font-weight:bold">6 E-mail address</span></td>
+                <td class="tg-0lax" colspan="2"><span style="font-weight:bold">6 E-mail address  {{ $viewData['applicant']['email']}}</span></td>
             </tr>
         </tbody>
     </table>
@@ -232,22 +233,22 @@
     <table class="tg">
         <thead>
             <tr>
-                <th class="tg-0pky">Date and place of your original entry do Canada<br>* Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;YYYY-MM-DD</th>
-                <th class="tg-0pky">* Place<br><br></th>
+                <th class="tg-0pky">Date and place of your original entry do Canada<br>* Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;YYYY-MM-DD   {{ $viewData['applicant']['OriginalComingToCanadaDate']}}</th>
+                <th class="tg-0pky">* Place  Vancouver YVR<br> <br></th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td class="tg-0pky">2 *a) The original purpose for coming to Canada<br><br></td>
+                <td class="tg-0pky">2 *a) The original purpose for coming to Canada<br><br> {{ $viewData['applicant']['OriginalComingToCanadaPurpose']}}</td>
                 <td class="tg-0pky">b) Other<br><br></td>
             </tr>
             <tr>
-                <td class="tg-0pky">3 Date and place of your most recent entry to <br>Canada (if not the same as original entry)<br>Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;YYYY-MM-DD</td>
+                <td class="tg-0pky">3 Date and place of your most recent entry to <br>Canada (if not the same as original entry)  <br>Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;YYYY-MM-DD    {{ $viewData['applicant']['MostRecentComingToCanadaDate']}}  </td>
                 <td class="tg-0pky">Place<br></td>
             </tr>
             <tr>
                 <td class="tg-0pky">4 If applicable, provide the document number of the most recent Visitor Record, Study<br>Permit, Work Permit or Temporary Resident Permit issued to you.</td>
-                <td class="tg-0pky">Document Number<br><br></td>
+                <td class="tg-0pky">Document Number<br><br>  {{ $viewData['applicant']['PreviousPermitNumber']}}</td>
             </tr>
         </tbody>
     </table>
@@ -255,16 +256,16 @@
     <table class="tg">
         <thead>
             <tr>
-                <th class="tg-0lax" colspan="2"><span style="font-weight:bold">1</span><span style="font-weight:normal"> *a) What type of work permit are you applying for?</span><br><br></th>
+                <th class="tg-0lax" colspan="2"><span style="font-weight:bold">1</span><span style="font-weight:normal"> *a) What type of work permit are you applying for?</span><br><br>  {{ $viewData['applicant']['IntendedWork']}}</th>
                 <th class="tg-0lax" colspan="2">b) Other<br><br></th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td class="tg-0lax" colspan="4"><span style="font-weight:bold">2 </span><span style="font-weight:normal">Details of my prospective employer (attach original offer of employment)</span></td>
+                <td class="tg-0lax" colspan="4"><span style="font-weight:bold">2 </span><span style="font-weight:normal">Details of my prospective employer (attach original offer of employment)</span>  {</td>
             </tr>
             <tr>
-                <td class="tg-0lax" colspan="4">a) Name of employer (If you are employed by a foreign employer who has been awarded a contract to provide services to a Canadian entity, please identify the foreign employer here)<br><br></td>
+                <td class="tg-0lax" colspan="4">a) Name of employer (If you are employed by a foreign employer who has been awarded a contract to provide services to a Canadian entity, please identify the foreign employer here)<br><br> {{ $viewData['applicant']['Employer']}}</td>
             </tr>
             <tr>
                 <td class="tg-0lax" colspan="4">b) Complete Address of Employer (Canadian or Foreign):<br><br></td>
@@ -303,8 +304,8 @@
             <tr>
                 <td class="tg-baqh" rowspan="2"><br><span style="font-weight:bold">1</span></td>
                 <td class="tg-0lax">From<br><br>YYYY MM</td>
-                <td class="tg-0lax">Field and level of study</td>
-                <td class="tg-0lax" colspan="2">School/Facility name<br><br></td>
+                <td class="tg-0lax">Field and level of study <br><br> Computer Science</td>
+                <td class="tg-0lax" colspan="2">School/Facility name<br><br> {{ $viewData['applicant']['Education']}}</td>
             </tr>
             <tr>
                 <td class="tg-0lax">To<br>YYYY MM</td>

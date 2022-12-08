@@ -30,7 +30,7 @@ return new class extends Migration
             $table->string('residenceStatus');
             $table->string('residenceStatusPeriod');
             $table->string('maritalStatus');
-            $table->string('mariageDate')->default('none');
+            $table->string('mariageDate')->default(1111-11-11);
             $table->string('nativeLanguage')->default('none');
             $table->string('englishLevel')->default('none');
             $table->string('englishExam')->default('none');

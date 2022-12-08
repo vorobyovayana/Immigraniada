@@ -28,7 +28,7 @@ class UserController extends Controller
     {
         $newUser = new User();
 
-        $newUser->name = $formData->input('user_name');
+        $newUser->name = $formData->input('name');
         $newUser->email = $formData->input('email');
         $newUser->password = $formData->input('password');
         $newUser->immigrationPath = $formData->input('immigrationPath');

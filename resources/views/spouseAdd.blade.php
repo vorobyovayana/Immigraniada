@@ -1,10 +1,12 @@
 @include('partials.header')
 @include('partials.footer')
-<div class="container h-100">
-  <div class="row h-100 justify-content-center align-items-center">
-    <div class="col-10 col-md-8 col-lg-6">
+<br><br>
+<div class="mx-auto" style="width: 800px;">
+<a href="{{ route('form.imm5710')}}"><button>If unmarried, skip</button></a></div><br><br>
       <form method="POST" action="{{ route('spouse.create')}}">
+      <div class="mx-auto" style="width: 800px;">
       @csrf
+      <div class="form-group">
       <label for="fName">First Name</label>
           <input type="text" class="form-control" name="fName">
         </div>
@@ -32,10 +34,7 @@
           <input type="text"  class="form-control" name="occupation">
         </div>
 
-        <div class="form-group">
-          <label for="occupation">Occupation</label>
-          <input type="text"  class="form-control" name="occupation">
-        </div>
+
         <div class="form-group">
         <label for="willAccompany">Will they accompany you to Canada?</label>
         <select class="form-control" name="willAccompany">
@@ -44,4 +43,6 @@
           </select>
           </div>
         <input type=submit value="Add spouse">
+</div>
 </form>  
+

@@ -1,8 +1,10 @@
 @include('partials.header')
 @include('partials.footer')
 
-<form method="POST" action="{{ route('immigration.wpe.create')}}">
+<form  method="POST" action="{{ route('immigration.wpe.create')}}">
     @csrf
+    <div class="mx-auto" style="width: 800px;">
+    <div class="form-group">
     <label for="fName">First Name</label>
           <input type="text" class="form-control" name="fName">
         </div>
@@ -85,15 +87,7 @@
           <input type="date" value=09/29/2022 class="form-control" name="mariageDate">
         </div>
 
-        <div class="form-group">
-          <label for="sfName">Spouse First Name</label>
-          <input type="text" value="default" class="form-control" name="sfName">
-        </div>
-
-        <div class="form-group">
-          <label for="slName">Spouse Last Name</label>
-          <input type="text" value="default" class="form-control" name="slName">
-        </div>
+       
 
         <div class="form-group">
           <label for="englishLevel">English level</label>
@@ -174,7 +168,8 @@
           <label for="PreviousEmployment">Previous Employment</label>
           <input type="text" value="default" class="form-control" name="PreviousEmployment">
         </div>
-        <input type="submit" value="Create Application">
+        <input type="submit" value="Save information and proceed">
 
+        </div>
 
 </form>

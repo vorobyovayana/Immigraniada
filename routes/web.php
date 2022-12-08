@@ -34,7 +34,7 @@ Route::get('home', 'App\Http\Controllers\Maincontroller@showHomePage')->name("ma
 Route::get('/about', 'App\Http\Controllers\Maincontroller@showAboutPage')->name("main.about");
 
 Route::post('/user/create', 'App\Http\Controllers\UserController@createUser')->name('user.create');
-Route::post('/user/{id}/edit', 'App\Http\Controllers\UserController@edit')->name('user.edit');
+Route::get('/user/{id}/edit', 'App\Http\Controllers\UserController@edit')->name('user.edit');
 Route::post('/user/{id}/update', 'App\Http\Controllers\UserController@updateUser')->name('user.update');
 Route::get('/user/{id}/delete','App\Http\Controllers\UserController@deleteUser')->name('user.delete');
 
