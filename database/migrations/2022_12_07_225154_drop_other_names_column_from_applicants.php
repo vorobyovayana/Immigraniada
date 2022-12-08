@@ -13,9 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        //
-        Schema::table('immigration_procedures', function(Blueprint $table) {
-            $table->foreignId('applicants_id')->references('id')->on('applicants');
+        Schema::table('applicants', function (Blueprint $table) {
+            $table->dropColumn('otherNames');
         });
     }
 
@@ -26,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('applicants', function (Blueprint $table) {
+            
+        });
     }
 };
