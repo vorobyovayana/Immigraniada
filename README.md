@@ -17,7 +17,7 @@ Immigraniada runs on Laravel and also uses Node packages for Authentication and 
 - 4: Change the DB_DATABASE field on the .env file to DB_DATABASE=ImmigraniadaDB. The user is root and there is no password.
 - 5: Run XAMPP Control Panel and start MySQL. 
 - 6: php artisan migrate
-- 7: Restore DB data with mysql -u root -p < [filename].sql
+- 7: Restore DB data with mysql -u root -p < DBbackup.sql
 - 8: php artisan serve (to start Laravel server)
 - 9: npm run dev (on a separate terminal)
 
