@@ -23,6 +23,9 @@ Route::get('logout', [LoginController::class,'logout']);
 
 Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function() {
     Route::get('/dashboard', 'App\Http\Controllers\Admin\DashboardController@getDashboard')->name('admin.dashboard');
+    Route::get('/dashboard/manage-users', 'App\Http\Controllers\Admin\DashboardController@manageUsers')->name('admin.users');
+    Route::get('/dashboard/manage-procedures', 'App\Http\Controllers\Admin\DashboardController@manageProcedures')->name('admin.procedures');
+    Route::get('/dashboard/manage-forms', 'App\Http\Controllers\Admin\DashboardController@manageForms')->name('admin.forms');    
 });
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
