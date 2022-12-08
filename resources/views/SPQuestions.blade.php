@@ -1,10 +1,11 @@
 @include('partials.header')
 @include('partials.footer')
 <div class="container h-100">
-  <div class="row h-100 justify-content-center align-items-center">
-    <div class="col-10 col-md-8 col-lg-6">
+
       <form method="POST" action="{{ route('immigration.spe.create')}}">
+      <div class="mx-auto" style="width: 800px;">
       @csrf
+      <div>
       <label for="fName">First Name</label>
           <input type="text" class="form-control" name="fName">
         </div>
@@ -190,6 +191,7 @@
       </div> -->
 
       <input type="submit" value="Create Application">
+      </div>
 
     </form>
   </div>
